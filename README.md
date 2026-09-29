@@ -176,7 +176,6 @@ uvicorn app.main:app --port 8000   # http://localhost:8000
 루트 `render.yaml`을 Render Blueprint로 연결하면 `WEB/`을 기준으로 빌드·실행합니다.
 - Build: `pip install -r requirements.txt` / Start: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
 - 헬스체크: `/api/health` → `{"api":"ok","db":true,...}`
-- 무료 플랜은 15분 미사용 시 절전되며, 재배포하면 저장된 상담 기록이 초기화됩니다.
 - 예선 데모 버전으로 로그인·권한 기능은 아직 없습니다 (본선에서 추가 예정).
 
 자세한 내용은 [`WEB/README.md`](WEB/README.md)를 참고하세요.
