@@ -121,7 +121,7 @@ DATA/
 SCRIPT/
 ├── crawl_scholarship.py              # 1~20페이지 및 상세 글 수집
 └── postprocess_scholarship.py         # 기존 CSV 정규화·필터링
-설명/
+DOCS/
 ├── 데이터_생성과정.md
 └── 데이터_명세.md
 ```
@@ -144,6 +144,26 @@ python SCRIPT/postprocess_scholarship.py
 - 출처: [교내장학금 신청 및 선발 안내](https://gpa.korea.ac.kr/koreaSejong/7953/subview.do), [장학공지](https://secu.korea.ac.kr/koreaSejong/7906/subview.do)
 - 웹 상세 본문에 없는 첨부파일 전용 정보는 공란일 수 있습니다.
 - 실제 신청 전 반드시 원문에서 최신 일정과 자격을 확인하세요.
-- 세부 정제 과정과 스키마는 [`설명/데이터_생성과정.md`](설명/데이터_생성과정.md), [`설명/데이터_명세.md`](설명/데이터_명세.md)를 참고하세요.
+- 세부 정제 과정과 스키마는 [`DOCS/데이터_생성과정.md`](DOCS/데이터_생성과정.md), [`DOCS/데이터_명세.md`](DOCS/데이터_명세.md)를 참고하세요.
 
 출처 콘텐츠는 라이선스 준수를 위해 그대로 재게시하지 않고 데이터 필드 형태로 요약·재구성했습니다.
+
+---
+
+## 상담 웹서비스 (WEB/)
+
+이탈 예측 결과(CatBoost + SHAP)를 상담 현장에 연결하는 웹서비스입니다. 화면(HTML/JS) → FastAPI → SQLite 구조이며, 화면도 FastAPI가 같이 서빙합니다.
+
+- `WEB/app/main.py`: API + 화면 서빙, `WEB/app/rules.py`: 등급·요인 태깅·지원 매칭·브리핑 규칙
+- `WEB/static/`: index.html, app.js, style.css, img/
+- `WEB/data/app.db`: 예측 결과·장학·프로그램·상담 기록 DB
+- 운영: 학기 배치 예측. 예선은 사전 작성 브리핑 + 규칙 초안, 본선은 Bedrock 연동 예정 (`BEDROCK_MODEL_ID`)
+- 배포: 루트 `render.yaml` (Render Blueprint), 헬스체크 `/api/health`
+
+```bash
+cd WEB
+pip install -r requirements.txt
+uvicorn app.main:app --port 8000   # http://localhost:8000
+```
+
+자세한 내용은 [`WEB/README.md`](WEB/README.md)를 참고하세요.
