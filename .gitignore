@@ -10,6 +10,12 @@ SCRIPT/_crawl_log.txt
 *.tmp.csv
 .venv/
 .vscode/
+.env
+*.log
+
+# OS 파일
+.DS_Store
+Thumbs.db
 
 # Excel 임시 파일
 ~$*
