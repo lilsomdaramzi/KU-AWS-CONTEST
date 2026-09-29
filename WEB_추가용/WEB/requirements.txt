@@ -1,0 +1,7 @@
+fastapi==0.115.0
+uvicorn==0.30.6
+pydantic>=2
+boto3
+# 실시간 예측을 쓸 때만
+# catboost==1.2.8
+# pandas==2.2.2

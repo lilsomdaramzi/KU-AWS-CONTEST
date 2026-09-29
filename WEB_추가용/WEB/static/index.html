@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>학업지속 상담 | 고려대학교 세종캠퍼스</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<aside class="profile">
+  <div class="cover"></div>
+  <div class="avatar" aria-hidden="true">상</div>
+  <div class="pname">상담 담당자</div>
+  <div class="prole">세종학생상담센터</div>
+  <div class="pstats">
+    <div><small>조기이탈</small><b id="pE"></b></div>
+    <div><small>중도이탈</small><b id="pM"></b></div>
+    <button class="hot" id="pHot">상담<br>대상<b id="pAll"></b></button>
+  </div>
+  <div class="ptabs" role="group"><button id="ptNew" aria-pressed="true"></button><button id="ptSeen" aria-pressed="false"></button></div>
+  <div class="palerts" id="palerts"></div>
+  <div class="pfoot"><a href="https://kuseum.korea.ac.kr" target="_blank" rel="noopener">쿠세움(KUSEUM) 바로가기</a></div>
+</aside>
+<nav class="rail" aria-label="주요 메뉴">
+  <button class="fold" id="fold" aria-expanded="true"><svg viewBox="0 0 24 24"><path d="M14 6l-6 6 6 6M20 6l-6 6 6 6"/></svg>접기</button>
+  <button data-tab="dash"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v9h-5v-5H9v5H4z"/></svg>대시보드</button>
+  <button data-tab="stu"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3.3 2.8-5 5.5-5s4.9 1.7 5.5 5"/><path d="M17.5 7.5v5M17.5 15.2v.3"/></svg>위험학생</button>
+  <button data-tab="sup"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7.5 21l4.5-2.5 4.5 2.5-1.5-7.5"/></svg>장학·비교과</button>
+  <button data-tab="log"><svg viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="1"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></svg>상담기록</button>
+  <button data-tab="model"><svg viewBox="0 0 24 24"><path d="M4 20V4M4 20h16"/><path d="M7 15l4-4 3 3 5-6"/></svg>모델 성능</button>
+  <button data-tab="data" class="admin-only"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="6" height="5"/><rect x="15" y="4" width="6" height="5"/><rect x="9" y="15" width="6" height="5"/><path d="M6 9v3h12V9M12 12v3"/></svg>시스템 구조</button>
+</nav>
+<div class="main">
+  <div class="crumb">
+    <span class="home"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v9h-5v-5H9v5H4z"/></svg></span>
+    <span class="seg">학업지속 상담</span><span class="seg" id="crumbTab"></span>
+    <span class="sys" id="sys" aria-label="시스템 연결 상태"></span><span class="brand">고려대학교 세종캠퍼스</span>
+    <button class="devbtn admin-only" id="devbtn" aria-pressed="false">연동 정보 보기</button>
+  </div>
+  <div class="pagehead"><h2 id="pageTitle"></h2><p id="pageSub"></p></div>
+  <div class="content" id="content"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>
