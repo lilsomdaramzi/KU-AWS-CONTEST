@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+SCRIPT/_crawl_log.txt
+*.tmp.csv
+.venv/
+.vscode/
