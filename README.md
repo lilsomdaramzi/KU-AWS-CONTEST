@@ -10,7 +10,7 @@ SHAP으로 학생별 판정 사유를 설명한 뒤, 이를 장학·비교과 �
 | 예측 모델 | CatBoost 2종 (조기이탈 / 중도이탈) + SHAP 설명 |
 | 지원 데이터 | 교내 장학공지 170건 수집·정제 |
 | 웹서비스 | FastAPI + SQLite + HTML/JS, Render 배포 |
-| 배포 주소 | `https://<서비스명>.onrender.com` (헬스체크 `/api/health`) |
+| 배포 주소 | https://kus-counsel.onrender.com (헬스체크 [`/api/health`](https://kus-counsel.onrender.com/api/health)) |
 
 ## 폴더 구조
 ```
