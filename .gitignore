@@ -1,0 +1,8 @@
+# 로컬 캐시 / 로그
+*.pkl
+catboost_info/
+.ipynb_checkpoints/
+__pycache__/
+
+# Excel 임시 파일
+~$*
